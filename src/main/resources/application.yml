@@ -1,0 +1,26 @@
+spring:
+  autoconfigure:
+    exclude:
+      - com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    dynamic:
+      primary: one
+      strict: false
+      datasource:
+        one:
+          url: jdbc:mysql://localhost:3306/mybatis-plus?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&serverTimezone=GMT%2B8
+          username: root
+          password: linjun123
+          driver-class-name: com.mysql.cj.jdbc.Driver
+        two:
+          url: jdbc:mysql://localhost:3306/mybatis-plus2?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&serverTimezone=GMT%2B8
+          username: root
+          password: linjun123
+          driverClassName: com.mysql.cj.jdbc.Driver
+
+mybatis-plus:
+  global-config:
+    banner: false
+    db-config:
+      id-type: auto
